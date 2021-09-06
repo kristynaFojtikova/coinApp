@@ -18,11 +18,22 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer ref={setNaigationRef}>
-        <CoinStack.Navigator>
+        <CoinStack.Navigator
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: 'black',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}>
           <CoinStack.Screen
             name="CoinList"
             component={CoinList}
-            options={{title: 'Coin App'}}
+            options={{
+              title: 'CoinApp',
+            }}
           />
           <CoinStack.Screen
             name="CoinDetail"

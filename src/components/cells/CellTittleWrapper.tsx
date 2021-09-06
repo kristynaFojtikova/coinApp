@@ -17,7 +17,9 @@ const CellTitleWrapper: React.FC<CellTitleWrapperProps> = ({
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    paddingVertical: 5,
+  },
   title: {
     fontWeight: '800',
   },
