@@ -1,20 +1,22 @@
-import {CurrencyDetail, CurrencyGlimpse} from '../types/currency-types';
 import produce from 'immer';
 import {CurrencyAction} from '../actions';
 import {CurrencyActionType} from '../action-types';
+import {CurrencyDetail, CurrencyGlimpse} from '..';
 
 interface CurrencyState {
   loading: boolean;
   error: string | null;
   listData: CurrencyGlimpse[];
-  detail: CurrencyDetail | null;
+  selectedCurrencyId: string | null;
+  selectedCurrencyDetail: CurrencyDetail | null;
 }
 
 const initialState: CurrencyState = {
   loading: false,
   error: null,
   listData: [],
-  detail: null,
+  selectedCurrencyId: null,
+  selectedCurrencyDetail: null,
 };
 
 const currencyReducer = produce(
@@ -31,12 +33,16 @@ const currencyReducer = produce(
         state.listData = action.payload;
         state.loading = false;
         return state;
+      case CurrencyActionType.SELECT_CURRENCY:
+        state.selectedCurrencyId = action.payload;
+        state.selectedCurrencyDetail = null;
+        return state;
       case CurrencyActionType.FETCH_DETAIL:
-        state.loading = true;
         state.error = null;
+        state.loading = true;
         return state;
       case CurrencyActionType.FETCH_DETAIL_COMPLETE:
-        state.detail = action.payload;
+        state.selectedCurrencyDetail = action.payload;
         state.loading = false;
         return state;
       case CurrencyActionType.FETCH_ERROR:
@@ -48,5 +54,4 @@ const currencyReducer = produce(
     }
   },
 );
-
 export default currencyReducer;

@@ -10,6 +10,11 @@ export interface FetchListCompleteAction {
   payload: CurrencyGlimpse[];
 }
 
+interface SelectCurrencyAction {
+  type: CurrencyActionType.SELECT_CURRENCY;
+  payload: string;
+}
+
 interface FetchDetailAction {
   type: CurrencyActionType.FETCH_DETAIL;
 }
@@ -27,6 +32,7 @@ export interface FetchErrorAction {
 export type CurrencyAction =
   | FetchListAction
   | FetchListCompleteAction
+  | SelectCurrencyAction
   | FetchDetailAction
   | FetchDetailCompleteAction
   | FetchErrorAction;

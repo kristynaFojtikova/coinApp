@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
-import {Text, View} from 'react-native';
+import {StyleSheet, View, FlatList, Alert} from 'react-native';
+import CurrencyCell from '../components/cells/CurrencyCell';
 import {useActions} from '../hooks/useActions';
 import {useTypedSelector} from '../hooks/useTypedSelector';
 
@@ -15,11 +16,28 @@ const CoinList: React.FC = () => {
     fetchCurrencyList();
   }, [fetchCurrencyList]);
 
+  useEffect(() => {
+    if (error) {
+      Alert.alert('Error', error);
+    }
+  }, [error]);
+
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Coin List</Text>
+    <View>
+      <FlatList
+        onRefresh={fetchCurrencyList}
+        refreshing={loading}
+        style={styles.container}
+        data={listData}
+        renderItem={({item}) => <CurrencyCell currencyGlimpse={item} />}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {},
+  contentContainer: {},
+});
 
 export default CoinList;
