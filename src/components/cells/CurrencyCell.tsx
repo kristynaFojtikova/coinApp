@@ -48,4 +48,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CurrencyCell;
+function areEqual(
+  {currencyGlimpse: prevGlimpse},
+  {currencyGlimpse: nextGlimpse},
+) {
+  return prevGlimpse.id === nextGlimpse.id;
+}
+export default React.memo(CurrencyCell, areEqual);
