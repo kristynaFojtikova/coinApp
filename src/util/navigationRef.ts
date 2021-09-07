@@ -2,7 +2,7 @@ import {createNavigationContainerRef} from '@react-navigation/native';
 
 export let navigationRef = createNavigationContainerRef();
 
-export const setNaigationRef = ref => {
+export const setNavigationRef = ref => {
   navigationRef = ref;
 };
 

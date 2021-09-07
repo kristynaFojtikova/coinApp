@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {setNaigationRef} from '../util/navigationRef';
+import {setNavigationRef} from '../util/navigationRef';
 import CoinList from '../screens/CoinList';
 import CoinDetail from '../screens/CoinDetail';
 
@@ -15,7 +15,7 @@ const CoinStack = createNativeStackNavigator<CoinStackParamList>();
 
 const CoinNavigationContainer = () => {
   return (
-    <NavigationContainer ref={setNaigationRef}>
+    <NavigationContainer ref={setNavigationRef}>
       <CoinStack.Navigator
         screenOptions={{
           headerStyle: {
