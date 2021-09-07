@@ -34,6 +34,10 @@ export interface UpdateListSearchAction {
   payload: string;
 }
 
+export interface ToggleListSearchVisibilityAction {
+  type: CurrencyActionType.TOGGLE_LIST_SEARCH_VISIBILITY;
+}
+
 export type CurrencyAction =
   | FetchListAction
   | FetchListCompleteAction
@@ -41,4 +45,5 @@ export type CurrencyAction =
   | FetchDetailAction
   | FetchDetailCompleteAction
   | FetchErrorAction
-  | UpdateListSearchAction;
+  | UpdateListSearchAction
+  | ToggleListSearchVisibilityAction;

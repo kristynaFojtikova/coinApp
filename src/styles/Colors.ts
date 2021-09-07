@@ -1,6 +1,7 @@
 const Colors = {
   lightFont: 'white',
   darkFont: 'black',
+  blackAplpha: 'rgba(0,0,0,0.8)',
   lightGrey: 'rgba(224, 224, 224, 1))',
   offWhite: 'rgba(250, 250, 250, 1))',
   grey: 'rgba(180, 180, 180, 1))',

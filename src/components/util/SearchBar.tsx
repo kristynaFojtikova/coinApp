@@ -5,17 +5,17 @@ import {
   Platform,
   View,
   TouchableOpacity,
+  Text,
 } from 'react-native';
-import {faTimes, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 import {useActions} from '../../hooks/useActions';
 import {useTypedSelector} from '../../hooks/useTypedSelector';
 import Colors from '../../styles/Colors';
 
 const SearchBar = () => {
-  const {listSearch} = useTypedSelector(({currencies}) => ({
+  const {listSearch, visible} = useTypedSelector(({currencies}) => ({
     listSearch: currencies.listSearch,
+    visible: currencies.searchBarVisible,
   }));
   const [searchInput, setSearchInput] = useState<string>(listSearch || '');
 
@@ -30,23 +30,34 @@ const SearchBar = () => {
     };
   }, [searchInput, updateListSearch]);
 
+  useEffect(() => {
+    if (!visible) {
+      setSearchInput('');
+    }
+  }, [visible]);
+
+  const containerStyle = visible
+    ? styles.container
+    : {...styles.container, ...styles.collapsed};
   return (
-    <View style={styles.container}>
-      <View style={styles.innerContainer}>
-        <TextInput
-          value={searchInput}
-          style={styles.input}
-          placeholder="Search coins..."
-          onChangeText={string => setSearchInput(string)}
-          placeholderTextColor={'grey'}
-        />
-        <TouchableOpacity
-          onPress={() => {
-            setSearchInput('');
-          }}>
-          <FontAwesomeIcon icon={faTimesCircle} size={20} color="black" />
-        </TouchableOpacity>
-      </View>
+    <View style={containerStyle}>
+      {visible && (
+        <>
+          <TextInput
+            value={searchInput}
+            style={styles.input}
+            placeholder="Search coins..."
+            onChangeText={string => setSearchInput(string)}
+            placeholderTextColor={'white'}
+          />
+          <TouchableOpacity
+            onPress={() => {
+              setSearchInput('');
+            }}>
+            <Text style={{color: Colors.lightFont}}>Clear</Text>
+          </TouchableOpacity>
+        </>
+      )}
     </View>
   );
 };
@@ -54,27 +65,27 @@ const SearchBar = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 5,
-    paddingHorizontal: 10,
-    backgroundColor: Colors.lightGrey,
-  },
-  innerContainer: {
+    paddingHorizontal: 25,
+    backgroundColor: Colors.blackAplpha,
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
-    backgroundColor: Colors.lightFont,
-    borderRadius: 10,
-    paddingHorizontal: 15,
+    overflow: 'hidden',
+  },
+  collapsed: {
+    height: 0,
+    padding: 0,
+  },
+  input: {
+    marginRight: 10,
+    color: Colors.lightFont,
+    flex: 1,
     ...Platform.select({
       android: {},
       ios: {
         paddingVertical: 10,
       },
     }),
-  },
-  input: {
-    marginRight: 10,
-    color: Colors.darkFont,
-    flex: 1,
   },
 });
 

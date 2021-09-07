@@ -8,6 +8,7 @@ interface CurrencyState {
   error: string | null;
   listData: CurrencyGlimpse[];
   listSearch?: string;
+  searchBarVisible: boolean;
   selectedCurrencyId: string | null;
   selectedCurrencyDetail: CurrencyDetail | null;
 }
@@ -18,6 +19,7 @@ const initialState: CurrencyState = {
   listData: [],
   selectedCurrencyId: null,
   selectedCurrencyDetail: null,
+  searchBarVisible: false,
 };
 
 const currencyReducer = produce(
@@ -52,6 +54,9 @@ const currencyReducer = produce(
         return state;
       case CurrencyActionType.UPDATE_LIST_SEARCH:
         state.listSearch = action.payload;
+        return state;
+      case CurrencyActionType.TOGGLE_LIST_SEARCH_VISIBILITY:
+        state.searchBarVisible = !state.searchBarVisible;
         return state;
       default:
         return state;

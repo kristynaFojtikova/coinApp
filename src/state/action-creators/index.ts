@@ -66,9 +66,16 @@ const updateListSearch = (string: string) => {
   };
 };
 
+const toggleListSearchVisibility = () => {
+  return {
+    type: CurrencyActionType.TOGGLE_LIST_SEARCH_VISIBILITY,
+  };
+};
+
 export const actionCreators = {
   fetchCurrencyList,
   selectCurrencyAction,
   fetchCurrencyDetail,
   updateListSearch,
+  toggleListSearchVisibility,
 };
