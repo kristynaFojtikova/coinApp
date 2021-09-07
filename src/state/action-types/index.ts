@@ -5,5 +5,5 @@ export enum CurrencyActionType {
   FETCH_DETAIL = 'fetch_detail',
   FETCH_DETAIL_COMPLETE = 'fetch_detail_complete',
   FETCH_ERROR = 'fetch_error',
-  SAVE_ERROR = 'save_error',
+  UPDATE_LIST_SEARCH = 'update_list_search',
 }

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   symbol: {
     fontWeight: '700',
-    width: '25%',
+    width: '30%',
     paddingHorizontal: 15,
     paddingRight: 15,
   },

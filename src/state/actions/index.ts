@@ -29,10 +29,16 @@ export interface FetchErrorAction {
   payload: string;
 }
 
+export interface UpdateListSearchAction {
+  type: CurrencyActionType.UPDATE_LIST_SEARCH;
+  payload: string;
+}
+
 export type CurrencyAction =
   | FetchListAction
   | FetchListCompleteAction
   | SelectCurrencyAction
   | FetchDetailAction
   | FetchDetailCompleteAction
-  | FetchErrorAction;
+  | FetchErrorAction
+  | UpdateListSearchAction;

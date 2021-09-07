@@ -43,6 +43,10 @@ const CoinDetail: React.FC = () => {
         <CoinIcon icon={currencyGlimpse?.icon || '#'} />
         <Text style={styles.symbol}>{currencyGlimpse?.symbol}</Text>
       </View>
+      <SimpleValueCell
+        value={`${currencyGlimpse?.currencyName}`}
+        title="Name"
+      />
       <SimpleValueCell value={`${currencyGlimpse?.rank}`} title="Rank" />
       <FormattedValueCell
         value={currencyDetail?.circulatingSupply}

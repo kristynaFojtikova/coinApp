@@ -7,6 +7,7 @@ interface CurrencyState {
   loading: boolean;
   error: string | null;
   listData: CurrencyGlimpse[];
+  listSearch?: string;
   selectedCurrencyId: string | null;
   selectedCurrencyDetail: CurrencyDetail | null;
 }
@@ -48,6 +49,9 @@ const currencyReducer = produce(
       case CurrencyActionType.FETCH_ERROR:
         state.loading = false;
         state.error = action.payload;
+        return state;
+      case CurrencyActionType.UPDATE_LIST_SEARCH:
+        state.listSearch = action.payload;
         return state;
       default:
         return state;

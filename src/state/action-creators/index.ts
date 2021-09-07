@@ -59,8 +59,16 @@ const fetchCurrencyDetail = (id: string) => {
   };
 };
 
+const updateListSearch = (string: string) => {
+  return {
+    type: CurrencyActionType.UPDATE_LIST_SEARCH,
+    payload: string,
+  };
+};
+
 export const actionCreators = {
   fetchCurrencyList,
   selectCurrencyAction,
   fetchCurrencyDetail,
+  updateListSearch,
 };
