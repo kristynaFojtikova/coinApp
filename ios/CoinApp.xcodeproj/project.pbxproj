@@ -160,7 +160,6 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				B708A0E4F3CEB7E11692AAF5 /* [CP] Embed Pods Frameworks */,
 				B81C662CD289EBB809628C7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -183,7 +182,6 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				DD60CC2796B8B1CE0C2E72F3 /* [CP] Embed Pods Frameworks */,
 				9F2D7C26B0C059ECF9362463 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -326,23 +324,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinApp/Pods-CoinApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B708A0E4F3CEB7E11692AAF5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoinApp-CoinAppTests/Pods-CoinApp-CoinAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoinApp-CoinAppTests/Pods-CoinApp-CoinAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinApp-CoinAppTests/Pods-CoinApp-CoinAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B81C662CD289EBB809628C7D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,23 +339,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinApp-CoinAppTests/Pods-CoinApp-CoinAppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD60CC2796B8B1CE0C2E72F3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoinApp/Pods-CoinApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoinApp/Pods-CoinApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinApp/Pods-CoinApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {

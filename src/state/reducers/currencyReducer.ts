@@ -19,7 +19,7 @@ const initialState: CurrencyState = {
   listData: [],
   selectedCurrencyId: null,
   selectedCurrencyDetail: null,
-  searchBarVisible: false,
+  searchBarVisible: true,
 };
 
 const currencyReducer = produce(
